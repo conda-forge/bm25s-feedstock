@@ -1,5 +1,5 @@
 {% set name = "bm25s" %}
-{% set version = "0.2.8" %}
+{% set version = "0.2.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/bm25s-{{ version }}.tar.gz
-  sha256: a09a0492fe5b40e514540bbfd7e23a3475ae718852590b1ac91f534acd4b85c1
+  sha256: e52d6663c68e96f46b1b82efa41a893d268bf979954b0b5ead912a4bfcd173a5
 
 build:
   noarch: python
