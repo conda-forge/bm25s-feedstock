@@ -1,0 +1,46 @@
+schema_version: 1
+
+context:
+  name: bm25s
+  version: 0.2.11
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/bm25s-${{ version }}.tar.gz
+  sha256: 843f1a2c95dbfd7b36dbd728c288e56004dad5e1d0e7ffc30cc1080151807531
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - scipy
+    - numpy
+
+tests:
+  - python:
+      imports:
+        - bm25s
+      pip_check: true
+      python_version: ${{ python_min }}.*
+
+about:
+  summary: An ultra-fast implementation of BM25 based on sparse matrices.
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/xhluca/bm25s
+  documentation: https://bm25s.github.io/
+
+extra:
+  recipe-maintainers:
+    - thewchan
