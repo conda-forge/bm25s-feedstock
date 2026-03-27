@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: bm25s
-  version: "0.3.2.post1"
+  version: "0.3.3"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/bm25s-${{ version }}.tar.gz
-  sha256: 66470f49fb9e8208e3d01d400d237ed09ecad9a03d7721f82cf520e3b2e29aee
+  sha256: c2567435da193ea8bf8801c471ae972cfc8f4415002f2e024f4c55d0fbc0f12f
 
 build:
   number: 0
@@ -32,7 +32,9 @@ tests:
       imports:
         - bm25s
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
 
 about:
   summary: An ultra-fast implementation of BM25 based on sparse matrices.
