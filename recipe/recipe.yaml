@@ -32,7 +32,9 @@ tests:
       imports:
         - bm25s
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
 
 about:
   summary: An ultra-fast implementation of BM25 based on sparse matrices.
