@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: bm25s
-  version: "0.3.8"
+  version: "0.3.9"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/bm25s-${{ version }}.tar.gz
-  sha256: d165f096d64961de0b25a0ad4989d42dfe529c94ca12a9a070eef173c62b8612
+  sha256: 895c679d952b7de8355edb5f3e1a620a1e2f294d1d42b919bf0821cce2e2f597
 
 build:
   number: 0
