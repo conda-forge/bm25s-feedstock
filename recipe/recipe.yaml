@@ -16,6 +16,8 @@ build:
   number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  entry_points:
+    - bm25=bm25s.cli:main
 
 requirements:
   host:
@@ -24,7 +26,6 @@ requirements:
     - setuptools
   run:
     - python >=${{ python_min }}
-    - scipy
     - numpy
 
 tests:
@@ -35,6 +36,11 @@ tests:
       python_version:
         - ${{ python_min }}.*
         - "*"
+  - requirements:
+      run:
+        - ${{ python_min }}.*
+    script:
+      - bm25 --help
 
 about:
   summary: An ultra-fast implementation of BM25 based on sparse matrices.
